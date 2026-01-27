@@ -859,15 +859,6 @@ Mastering Linux commands is a journey, not a destination. Start with the basics,
 - Create aliases for frequently used commands
 - Always verify commands before using sudo
 
-### ✅ Next Steps:
-
-1. Set up a practice Linux environment (VM or WSL)
-2. Practice 5-10 commands daily
-3. Learn shell scripting to automate tasks
-4. Explore text editors (vim, nano)
-5. Master grep, sed, and awk for text processing
-6. Study Linux filesystem hierarchy
-
 ### 📚 Additional Tools to Explore:
 
 - **bat** : Enhanced cat with syntax highlighting
