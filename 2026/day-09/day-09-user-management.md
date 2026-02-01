@@ -53,8 +53,7 @@ ls /home
 
 **Screenshot Suggestion** (Example of useradd command):  
 
-
-
+<img width="721" height="440" alt="image" src="https://github.com/user-attachments/assets/cb478b1e-4ece-4f78-a6d6-90ea9813e111" />
 
 **Blueprint Diagram for Task 1**:
 ```
@@ -81,9 +80,7 @@ cat /etc/group | grep -E 'developers|admins'
 ```
 
 **Screenshot Suggestion** (/etc/group example):  
-
-
-
+<img width="829" height="479" alt="image" src="https://github.com/user-attachments/assets/b9fd33f6-818a-4150-92f9-ef2dff1a4a7e" />
 
 ### Task 3: Assign Users to Groups (15 minutes)
 
@@ -104,8 +101,7 @@ id berlin
 ```
 
 **Screenshot Suggestion** (usermod + groups command):  
-
-
+<img width="1074" height="672" alt="image" src="https://github.com/user-attachments/assets/f0057f07-ef70-4afc-bc68-c022dda655f1" />
 
 
 ### Task 4: Shared Directory (20 minutes)
@@ -124,8 +120,7 @@ ls -ld /opt/dev-project
 
 **Screenshot Suggestion** (ls -ld permissions example):  
 
-
-
+<img width="1572" height="1066" alt="image" src="https://github.com/user-attachments/assets/b1539860-d927-42ed-b9f2-9d471c116c0e" />
 
 **Blueprint Diagram**:
 ```
