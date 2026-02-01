@@ -31,9 +31,7 @@ Start
 
 This blueprint shows the linear flow—each part builds on the last.
 
-
-
-*(Image: AWS EC2 instance launch screenshot - shows the dashboard and "Launch instance" button.)*
+<img width="977" height="727" alt="image" src="https://github.com/user-attachments/assets/b37ca25b-1e21-4ae5-a34e-2993bcf0dbbf" />
 
 ## Part 1: Launch Cloud Instance & SSH Access (15 Minutes)
 Goal: Get a virtual server running and connect to it remotely.
@@ -65,9 +63,7 @@ AWS Console
 4. Type "yes" to trust host first time.
 5. You're in! Run `whoami` to confirm (output: ubuntu).
 
-
-
-*(Image: SSH connection to cloud server terminal example - shows login prompt and system info.)*
+<img width="1784" height="1184" alt="image" src="https://github.com/user-attachments/assets/94937a75-39fd-4d9b-b7ec-2f6e12114fbb" />
 
 **Troubleshooting Tip (Quick Fix Here):** If "Permission denied (publickey)": Check key path, permissions (chmod 400), or IP. Wrong user? Use ec2-user for Amazon Linux.
 
@@ -85,9 +81,7 @@ Goal: Update server and set up web server software.
 3. Enable boot: `sudo systemctl enable docker`.
 4. Verify: `sudo docker --version` (output: Docker version 20.xx).
 
-
-
-*(Image: Installing Docker on Ubuntu server command line - shows apt install commands.)*
+<img width="1366" height="758" alt="image" src="https://github.com/user-attachments/assets/ba7a9629-f172-4517-9d70-48b26050171b" />
 
 ### Step 3: Install Nginx
 1. Install: `sudo apt install nginx -y`.
@@ -113,13 +107,9 @@ Goal: Allow web traffic (port 80 for HTTP).
 3. Save.
 4. Test: In browser, go to http://<your-ip> —see Nginx welcome page!
 
+<img width="1200" height="729" alt="image" src="https://github.com/user-attachments/assets/f772b8d7-b8d4-4c54-9b0a-c458e7d0be63" />
 
-
-*(Image: AWS security group configuration for port 80 - shows inbound rules edit screen.)*
-
-
-
-*(Image: Nginx welcome page in browser - default "Welcome to nginx!" screen.)*
+<img width="295" height="171" alt="image" src="https://github.com/user-attachments/assets/05b659fa-7f91-437d-9ea6-b33487767d01" />
 
 **Troubleshooting Tip:** Page not loading? Check IP (copy from AWS), security group (port 80 open?), Nginx status (running?).
 
