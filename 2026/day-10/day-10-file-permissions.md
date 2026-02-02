@@ -1,15 +1,11 @@
 # Day 10 – File Permissions & File Operations Challenge  
-**Super Simple Guide for Beginners (2026 Edition)**
-
-Hello Ibrar (@ibrarahmad900)!  
-It's 01:56 PM IST on February 02, 2026, in Bengaluru — good time for a quick 1-hour practice before afternoon tea.  
+**Super Simple Guide for Beginners (2026 Edition)**  
 
 Today we master **file permissions** (like locks on doors) and **basic operations** (create/read/modify). README instructions followed exactly, but made **extra simple**: short steps, everyday examples, text-based structure & blueprint diagrams (easy to visualize), pictures from internet, and the **best troubleshooting guide** at the end.
 
 Think of permissions like: `rwx` = read (open book), write (edit book), execute (run as program). Numbers: 4(r) + 2(w) + 1(x) = 7 (full access).
 
 ### Overall Workflow Blueprint (Step-by-Step Flow)
-```
 Start
 ├── Task 1: Create 3 Files (touch, cat/echo, vim)
 ├── Task 2: Read Files (cat, vim read-only, head, tail)
@@ -17,7 +13,6 @@ Start
 ├── Task 4: Modify Permissions (chmod +x, -w, 640, 755)
 ├── Task 5: Test Permissions (try write/execute, note errors)
 └── End: Document in day-10-file-permissions.md + Screenshots + Submit
-```
 
 This blueprint is a linear path — do one task, then next.
 
@@ -41,7 +36,7 @@ This blueprint is a linear path — do one task, then next.
 **Verification**: `ls -l` (shows files with default permissions like -rw-r--r--).  
 
 **Structure Diagram for Task 1**:
-```
+
 touch devops.txt      → Empty file created
      ↓
 echo "text" > notes.txt → File with 1 line
@@ -49,9 +44,6 @@ echo "text" > notes.txt → File with 1 line
 vim script.sh         → Edit and add echo line
      ↓
 ls -l                 → See all 3 files
-```
-
-*(Picture: touch command in terminal – creating file with ls output after.)*
 
 #### Task 2: Read Files (10 minutes)
 **Goal**: View content in different ways.
@@ -64,8 +56,6 @@ ls -l                 → See all 3 files
 
 4. Last 5 lines: `tail -n 5 /etc/passwd`.  
 
-*(Picture: cat command output – showing file content in terminal.)*
-
 #### Task 3: Understand Permissions (10 minutes)
 Permissions format: `rwxrwxrwx` = owner-group-others.  
 Numbers: r=4, w=2, x=1 (e.g., 755 = rwxr-xr-x).  
@@ -74,8 +64,6 @@ Numbers: r=4, w=2, x=1 (e.g., 755 = rwxr-xr-x).
 (Example output: -rw-r--r-- for notes.txt = owner rw, group/others r).  
 
 Who can: Owner read/write, group/others read only. No execute for anyone yet.
-
-*(Picture: ls -l permissions example – colored terminal showing rwx details.)*
 
 #### Task 4: Modify Permissions (20 minutes)
 **Goal**: Change access levels.
@@ -99,8 +87,6 @@ chmod +x script.sh    → Add execute
 ./script.sh           → Test run
      ↓
 ls -l                 → Now -rwxr-xr-x
-
-*(Picture: chmod +x example – before/after ls -l for script.)*
 
 #### Task 5: Test Permissions (10 minutes)
 1. Write to read-only: `echo "test" >> devops.txt` → Error: "Permission denied".  
