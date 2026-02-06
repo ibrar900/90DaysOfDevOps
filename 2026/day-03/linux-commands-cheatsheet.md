@@ -61,6 +61,8 @@ HARDWARE             |  CPU, RAM, Disk, NICs
 
 ### 🌐 Networking Troubleshooting
 - `ip address`: Show/manipulate routing, devices, policy routing, and tunnels.
+- 'ifconfig / ip addr': shows networks
+- 'ip r': Gateway of network
 - `ping`: Send ICMP ECHO_REQUEST to network hosts.
 - `curl`: Transfer data from or to a server (supports HTTP, FTP, etc.).
 - `netstat` / `ss`: Print network connections, routing tables, and interface statistics.
