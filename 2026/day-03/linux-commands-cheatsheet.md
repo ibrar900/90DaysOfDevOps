@@ -9,6 +9,8 @@ KERNEL               |  CPU/Memory Manager, File System, Drivers
 HARDWARE             |  CPU, RAM, Disk, NICs
 ```
 
+
+
 ## 📂 Linux File System Hierarchy (FSH)
 - `/bin`: Essential user command binaries (ls, cp, mv)
 - `/sbin`: System binaries for administration (fdisk, ip)
