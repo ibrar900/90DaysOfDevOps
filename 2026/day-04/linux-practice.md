@@ -1,11 +1,6 @@
 
 # Day 04 – Linux Practice: Processes, Services, and Logs
 
-**Date:** January 27, 2026  
-**Host:** ubuntu-devops-lab  
-**OS:** Ubuntu 22.04.3 LTS (Jammy Jellyfish)  
-**User:** devops-admin
-
 ## Objective
 
 Today's goal is to practice Linux fundamentals by running real commands for:
@@ -13,10 +8,6 @@ Today's goal is to practice Linux fundamentals by running real commands for:
 - Service control and status checking
 - Log analysis and troubleshooting
 - End-to-end mini incident resolution
-
-This hands-on practice builds muscle memory for production scenarios where speed and accuracy matter.
-
----
 
 ## 1. Process Checks
 
