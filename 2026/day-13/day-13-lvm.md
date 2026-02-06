@@ -5,38 +5,92 @@
 
 LVM = Logical Volume Manager. It's like magic for storage: Combine disks (physical volumes), group them (volume groups), and slice into flexible parts (logical volumes) that you can grow/shrink.
 
+<img width="1396" height="727" alt="Screenshot 2026-02-06 205616" src="https://github.com/user-attachments/assets/f0f7d176-1f14-4c82-987c-b0e3acee7524" />
+<img width="1396" height="727" alt="Screenshot 2026-02-06 205616" src="https://github.com/user-attachments/assets/daf32cc7-ddfa-4af5-b204-90cc3e8b3aa8" />
+<img width="1402" height="739" alt="Screenshot 2026-02-06 202743" src="https://github.com/user-attachments/assets/08282a3b-aa79-4581-aab2-a2738ffb774a" />
+<img width="1408" height="697" alt="Screenshot 2026-02-06 203038" src="https://github.com/user-attachments/assets/6772c6a1-d436-4185-ba21-ebaf70c9ced3" />
+<img width="1606" height="868" alt="Screenshot 2026-02-06 194720" src="https://github.com/user-attachments/assets/521149ef-c78c-4f3d-85a6-96bd65748126" />
+<img width="1850" height="881" alt="Screenshot 2026-02-06 202716" src="https://github.com/user-attachments/assets/f9fbdd7c-eb7c-40a6-8924-28869bec6b42" />
+
+
+
 ## Before You Start (5 Minutes Setup)
 - Switch to root: `sudo -i` or `sudo su` (all commands need root).  
-- No extra disk? Create a fake one (as in README): 
+# Day 13 – Linux Volume Management (LVM)
 
-Terminal---- bash
-  dd if=/dev/zero of=/tmp/disk1.img bs=1M count=1024  # 1GB fake disk
-  losetup -fP /tmp/disk1.img  # Attach as loop device
-  losetup -a  # Check name, e.g., /dev/loop0 – use this instead of /dev/sdb
-  
-- Real disk? Use `lsblk` to find it (e.g., /dev/sdb – careful, don't use your main disk!).
-
-**Structure Diagram for LVM Basics** (Like Building Blocks):
-
-Physical Volumes (PV) → Raw disks (e.g., /dev/sdb)
-     ↓
-Volume Group (VG) → Pool of PVs (combine space)
-     ↓
-Logical Volumes (LV) → Slices from VG (like partitions, but flexible)
-     ↓
-Format & Mount → Use as folder (e.g., /mnt/data)
+## Task
+Learn LVM to manage storage flexibly – create, extend, and mount volumes.
 
 
-*(Picture: LVM building blocks diagram – shows PV → VG → LV flow with arrows.)*
+## Task 1: Check Current Storage
+Run: `lsblk`, `pvs`, `vgs`, `lvs`, `df -h`
 
-## Challenge Tasks (Hands-On – Do in Order)
+<img width="866" height="514" alt="Screenshot 2026-02-06 174315" src="https://github.com/user-attachments/assets/74e53179-a712-4157-9181-65d5e1f36d38" />
 
-### Task 1: Check Current Storage
-**Goal**: See what's there before changes.
 
-Commands:
-Terminal---- bash
+## Task 2: Create Physical Volume
 
+<img width="1109" height="527" alt="Screenshot 2026-02-06 204216" src="https://github.com/user-attachments/assets/4ce79d30-c45a-48ea-871d-0abee7971921" />
+
+
+## Task 3: Create Volume Group
+
+<img width="1040" height="1015" alt="Screenshot 2026-02-06 205458" src="https://github.com/user-attachments/assets/ca89936d-0c43-490d-b7fc-688c8b099a55" />
+
+
+## Task 4: Create Logical Volume
+
+<img width="1114" height="852" alt="Screenshot 2026-02-06 205926" src="https://github.com/user-attachments/assets/71cced1d-c99d-41db-a76d-fa62ea1b9073" />
+
+
+## Task 5: Format and Mount
+
+<img width="1104" height="1016" alt="Screenshot 2026-02-06 210926" src="https://github.com/user-attachments/assets/d2b3429f-b4d6-47a2-98c6-57ef07b96cd0" />
+
+
+## Task 6: Extend the Volume
+
+<img width="1121" height="1015" alt="Screenshot 2026-02-06 212023" src="https://github.com/user-attachments/assets/09e69178-2d06-44d7-9299-68b475e8b98f" />
+
+
+## Task 7: Mounting PV directly
+
+<img width="1024" height="365" alt="image" src="https://github.com/user-attachments/assets/d2e03ad6-3571-4347-a9e3-07575536ce0f" />
+
+
+## Commands Used
+
+* `lsblk` - List block devices and their mount
+* `df -h` - Show mounted filesystem usage
+* `pvcreate /dev/sdb` - Initialize partition as PV
+* `pvs` - List all PVs
+* `vgcreate vg_name /dev/sdb` - Create a VG from PVs
+* `vgs` - List all VGs
+* `lvcreate -n lv_name -L 5G vg_name` - Create LV of 5GB
+* `lvextend -L +2G /dev/vg_name/lv_name` - Extend LV by 2GB
+* `lvs` - List all LVs
+* `mkfs.ext4 /dev/vg_name/lv_name` - Create ext4 filesystem
+* `mount /dev/vg_name/lv_name /mnt/data` - Mount created LV
+* `resize2fs /dev/vg_name/lv_name` - Resize ext2/3/4 filesystem
+* `mkfs -t ext4 /dev/sdb /mnt/data` - Directly mount PV
+
+## What I learned
+
+- Storage hierarchy in LVM: Physical Volumes (PV) → Volume Groups (VG) → Logical Volumes (LV).
+
+- Flexibility of LVM: Unlike traditional partitions, LVM allows resizing volumes dynamically without downtime.
+
+- Creating and managing PVs: Learned how to initialize raw disks/partitions into physical volumes using pvcreate.
+
+- Grouping storage with VGs: Multiple PVs can be combined into a single Volume Group, making storage management easier.
+
+- Filesystem resizing: After extending an LV, the filesystem (resize2fs) must also be resized to use the new space.
+
+- Mounting volumes: Learned how to format (mkfs.ext4) and mount LVs to directories for actual usage.
+
+- Direct PV mounting: Although possible to mount a PV directly, it’s not recommended — LVM provides abstraction and flexibility.
+
+ 
 lsblk      # Shows disks/partitions
 pvs        # Physical volumes
 vgs        # Volume groups
