@@ -8,7 +8,7 @@ KERNEL               |  CPU/Memory Manager, File System, Drivers
 ---------------------|---------------------------------------
 HARDWARE             |  CPU, RAM, Disk, NICs
 ```
-
+![File system](https://github.com/user-attachments/assets/a3f48dbb-2df2-4aaf-b378-34aaab2c7bb3)
 
 
 ## 📂 Linux File System Hierarchy (FSH)
