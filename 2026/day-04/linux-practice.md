@@ -17,6 +17,8 @@ Today's goal is to practice Linux fundamentals by running real commands for:
 ```bash
 ps aux | head -n 15
 ```
+<img width="1633" height="797" alt="Screenshot 2026-02-06 153634" src="https://github.com/user-attachments/assets/0f2620a6-e2a2-4eeb-b61c-f48b4e04306f" />
+
 
 **Purpose:**
 - Get a quick snapshot of top running processes
@@ -177,9 +179,15 @@ Jan 27 10:18:34 ubuntu-devops-lab sshd[2344]: Accepted password for monitoring f
 ### 2.2 List All Running Services
 
 **Command:**
+systemctl status | head -n 20      and systemctl status | tail -n 20
+
+<img width="1492" height="816" alt="Screenshot 2026-02-06 154810" src="https://github.com/user-attachments/assets/aa278c2c-5a83-4c1e-aad2-dbe96c527da5" />
+
+
 ```bash
 systemctl list-units --type=service --state=running | head -n 20
 ```
+<img width="1454" height="534" alt="image" src="https://github.com/user-attachments/assets/6b14db4e-50b0-4eb8-b2e1-dd03c3879288" />
 
 **Purpose:**
 - Get overview of all active systemd services
@@ -250,6 +258,8 @@ Jan 27 11:15:33 ubuntu-devops-lab sshd[2844]: Accepted publickey for devops-admi
 ### 3.2 Follow System Logs in Real-time
 
 **Command:**
+<img width="1644" height="336" alt="image" src="https://github.com/user-attachments/assets/be6574fe-0ba2-4ad7-91eb-f4a94e9c59a6" />
+
 ```bash
 sudo tail -f /var/log/syslog | grep -i "error\|fail\|warn"
 ```
@@ -272,10 +282,14 @@ sudo tail -f /var/log/syslog | grep -i "error\|fail\|warn"
 
 ### Step 1: Initial Investigation (Service Status)
 **Command:** `sudo systemctl status ssh`
+<img width="1535" height="676" alt="image" src="https://github.com/user-attachments/assets/679b698b-d2b2-46ab-8bea-586e23993347" />
+
 **Observation:** Active state is `failed (Result: exit-code)`. Main PID is gone.
 
 ### Step 2: Root Cause Analysis (Logs)
 **Command:** `sudo journalctl -u ssh -e`
+<img width="1429" height="359" alt="image" src="https://github.com/user-attachments/assets/66dece02-167f-4600-8672-b8038e83f07b" />
+
 **Observation:** Log shows: `/etc/ssh/sshd_config line 45: Bad configuration option: MaxAuthTries10`. There is a missing space.
 
 ### Step 3: Resolution (Fix and Reload)
@@ -284,6 +298,7 @@ sudo tail -f /var/log/syslog | grep -i "error\|fail\|warn"
 sudo sed -i 's/MaxAuthTries10/MaxAuthTries 10/' /etc/ssh/sshd_config
 sudo systemctl restart ssh
 ```
+<img width="1259" height="707" alt="image" src="https://github.com/user-attachments/assets/7e0a98d5-218a-4673-aa6f-87ba46ce6edf" />
 
 ### Step 4: Verification (Process and Port)
 **Commands:**
@@ -291,6 +306,8 @@ sudo systemctl restart ssh
 pgrep sshd
 sudo ss -tulpn | grep :22
 ```
+<img width="844" height="203" alt="image" src="https://github.com/user-attachments/assets/6d396f4a-8c36-43c4-8d1a-74b8ba98d302" />
+
 **Outcome:** sshd process is back (PID 3045). Port 22 is listening. Incident resolved.
 
 ---
