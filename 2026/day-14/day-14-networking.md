@@ -22,6 +22,10 @@ Physical L1 - SWitches routers Hardware, cables, fiber signal wireless signals
 
 <img width="1388" height="729" alt="Screenshot 2026-02-08 204237" src="https://github.com/user-attachments/assets/2b33db64-b0d2-45b8-8bf9-a0199308a740" />
 
+![OSI-model](https://github.com/user-attachments/assets/4883be24-c1dc-4e00-8c93-d133eebd220b)
+
+<img width="778" height="781" alt="image" src="https://github.com/user-attachments/assets/aac3bac4-5f42-4b82-bfbc-37e232aff741" />
+
 - Where **IP**, **TCP/UDP**, **HTTP/HTTPS**, **DNS** sit in the stack
 - One real example: “`curl https://trainwithshubham.com` = App layer over TCP over IP” ( Whole Website it will show in programming )
 
