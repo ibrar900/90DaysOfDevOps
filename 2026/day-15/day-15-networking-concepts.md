@@ -17,40 +17,41 @@ Authoritative name server. It provides actual answers to the DNS query. You can 
 - Learn **IP addressing** (IPv4, public vs private)
   
   <img width="969" height="676" alt="image" src="https://github.com/user-attachments/assets/9d97aa05-3e63-446f-b6bd-5e392e1db82c" />
+
 Ip address classes are devided in to 5 classes
 Class            Range                        subnet mask                no of Networks      No of Hosts
-  A        1.0.0.0 - 126.0.0.1                  255.0.0.0 / 8               126                16,777,214
-  B        128.0.0.0 - 191.255.255.255          255.255.0.0 / 16            16,384             16,534
-  C        192.0.0.0 - 223.255.255.255          255.255.255.0 / 24          2,097,152          254
-  D        224.0.0.0 - 239.255.255.255          -------------               -----------        ---------- Reserved For Testing and Muticasting
-  E        240.0.0.0 - 254.255.255.255          -------------               -----------        ---------- Experiments
-  Every Class or subnet ip range's First ip (Network ip) and Last ip address (Braodcast ip) reserved can't be used
-  127.0.0.0 - 127.255.255.255 range ip are reserved for OS testing loop back address ex: ping: 127.0.0.0 (localaddress)  
+A        1.0.0.0 - 126.0.0.1                  255.0.0.0 / 8               126                16,777,214
+B        128.0.0.0 - 191.255.255.255          255.255.0.0 / 16            16,384             16,534
+C        192.0.0.0 - 223.255.255.255          255.255.255.0 / 24          2,097,152          254
+D        224.0.0.0 - 239.255.255.255          -------------               -----------        ---------- Reserved For Testing and Muticasting
+E        240.0.0.0 - 254.255.255.255          -------------               -----------        ---------- Experiments
+Every Class or subnet ip range's First ip (Network ip) and Last ip address (Braodcast ip) reserved can't be used.
+127.0.0.0 - 127.255.255.255 range ip are reserved for OS testing loop back address ex: ping: 127.0.0.0 (localaddress)  
   
 - Break down **CIDR notation** and **subnetting** basics
-  <img width="4800" height="7801" alt="CIDR_Chart-1" src="https://github.com/user-attachments/assets/5c96090f-aa4f-43c2-b349-d8c316880439" />
+<img width="4800" height="7801" alt="CIDR_Chart-1" src="https://github.com/user-attachments/assets/5c96090f-aa4f-43c2-b349-d8c316880439" />
 
 - Know common **ports** and why they matter
- <img width="2360" height="2720" alt="common-port numbers" src="https://github.com/user-attachments/assets/735d0253-62a2-407b-aac6-c59bebeae78d" />
+<img width="2360" height="2720" alt="common-port numbers" src="https://github.com/user-attachments/assets/735d0253-62a2-407b-aac6-c59bebeae78d" />
 
-FTP (File Transfer Protocol)        : Uses TCP Port 21
-SSH (Secure Shell for Login)        : Uses TCP Port 22
-Telnet                              : Uses TCP Port 23 for remote login
-SMTP (Simple Mail Transfer Protocol): Uses TCP Port 25
-DNS                                 : Uses UDP or TCP on Port 53 for DNS queries
-DHCP Server                         : Uses UDP Port 67
-DHCP Client                         : Uses UDP Port 68
-HTTP (Hypertext Transfer Protocol)  : Uses TCP Port 80
-POP3 (Post Office Protocol V3)      : Uses TCP Port 110
-NTP (Network Time Protocol)         : Uses UDP Port 123
-NetBIOS                             : Uses TCP Port 139 for NetBIOS service
-IMAP (Internet Message Access Protocol): Uses TCP Port 143
-HTTPS (Secure HTTP)                 : Uses TCP Port 443
-SMB (Server Message Block)          : Uses TCP Port 445
-Oracle DB                           : Uses TCP Port 1521 for Oracle database communication port
-MySQL                               : Uses TCP Port 3306 for MySQL database communication port
-RDP                                 : Uses TCP Port 3389 for Remote Desktop Protocol
-PostgreSQL                          : Uses TCP Port 5432 for PostgreSQL database communication
+FTP (File Transfer Protocol)        : Port 21
+SSH (Secure Shell for Login)        : Port 22
+Telnet                              : Port 23 for remote login
+SMTP (Simple Mail Transfer Protocol): Port 25
+DNS                                 : Port 53 for DNS queries
+DHCP Server                         : Port 67
+DHCP Client                         : Port 68
+HTTP (Hypertext Transfer Protocol)  : Port 80
+POP3 (Post Office Protocol V3)      : Port 110
+NTP (Network Time Protocol)         : Port 123
+NetBIOS                             : Port 139 for NetBIOS service
+IMAP (Internet Message Access Protocol):Port 143
+HTTPS (Secure HTTP)                 : Port 443
+SMB (Server Message Block)          : Port 445
+Oracle DB                           : Port 1521 for Oracle database communication port
+MySQL                               : Port 3306 for MySQL database communication port
+RDP                                 : Port 3389 for Remote Desktop Protocol
+PostgreSQL                          : Port 5432 for PostgreSQL database communication
 
 <img width="468" height="622" alt="image" src="https://github.com/user-attachments/assets/59ca5ba3-2254-4685-9b24-d7808b12ab42" />
 
