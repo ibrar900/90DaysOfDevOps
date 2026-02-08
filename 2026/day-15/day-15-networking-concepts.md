@@ -19,6 +19,7 @@ Authoritative name server. It provides actual answers to the DNS query. You can 
   <img width="969" height="676" alt="image" src="https://github.com/user-attachments/assets/9d97aa05-3e63-446f-b6bd-5e392e1db82c" />
 
 Ip address classes are devided in to 5 classes
+
 Class            Range                        subnet mask                no of Networks      No of Hosts
 A        1.0.0.0 - 126.0.0.1                  255.0.0.0 / 8               126                16,777,214
 B        128.0.0.0 - 191.255.255.255          255.255.0.0 / 16            16,384             16,534
@@ -60,10 +61,12 @@ PostgreSQL                          : Port 5432 for PostgreSQL database communic
 
 ### Task 1: DNS – How Names Become IPs
 1. Explain in 3–4 lines: what happens when you type `google.com` in a browser?
+ 
 the browser resolves the domain name to an IP address via DNS, establishes a secure connection (HTTPS), and sends a request to Google's servers. Google then redirects to the regional site (e.g., .co.in or .com), fetching HTML, CSS, and JavaScript to display the search homepage. 
    
-3. What are these record types? Write one line each:
+2. What are these record types? Write one line each:
    - `A`, `AAAA`, `CNAME`, `MX`, `NS`
+   - 
 DNS records (A, AAAA, CNAME, MX, NS) are instructions in the Domain Name System that map domain names to IP addresses or other resources. A records map domains to IPv4 addresses, AAAA maps to IPv6, CNAME aliases names to other names, MX directs mail, and NS defines authoritative name servers. 
 Here is a breakdown of the specific record types:
 A Record (Address): Maps a domain or subdomain to a 32-bit IPv4 address, directly connecting a website name to its server.
@@ -72,20 +75,23 @@ CNAME Record (Canonical Name): Acts as an alias that maps a hostname (subdomain)
 MX Record (Mail Exchanger): Specifies the mail servers responsible for receiving email on behalf of a domain, directing traffic to the correct mail server.
 NS Record (Name Server): Identifies which DNS servers are authoritative for a domain, meaning they hold the actual, up-to-date DNS records and are responsible for answering queries about that domain.
 
-4. Run: `dig google.com` — identify the A record and TTL from the output
+3. Run: `dig google.com` — identify the A record and TTL from the output
 <img width="1512" height="578" alt="Screenshot 2026-02-08 212030" src="https://github.com/user-attachments/assets/8276ec62-9d17-4485-bf1f-68182e3713ae" />
 
 ---
 
 ### Task 2: IP Addressing
 1. What is an IPv4 address? How is it structured? (e.g., `192.168.1.10`)
+
 <img width="509" height="279" alt="image" src="https://github.com/user-attachments/assets/7717edd1-a733-429c-8e91-3e94130fcbb2" />
 
 2. Difference between **public** and **private** IPs — give one example of each
+
 Public IP addresses are globally unique identifiers assigned by ISPs for direct internet access.
 private IPs are used for local, secure communication within a home or office network (assigned by routers DHCP)
 
 3. What are the private IP ranges?
+ 
     10.0.0.0     - 10.255.255.255
     172.16.0.0   - 172.31.255.255
     192.168.0.0  - 192.168.255.255
@@ -97,14 +103,17 @@ private IPs are used for local, secure communication within a home or office net
 
 ### Task 3: CIDR & Subnetting
 1. What does `/24` mean in `192.168.1.0/24`?
-   24 bits of the IP address are used to identify the network
+
+24 bits of the IP address are used to identify the network
    
 2. How many usable hosts in a `/24`? A `/16`? A `/28`?
+
   /24 (255.255.255.0): 2^{8}-2 = 254 usable hosts.( 256 Total ip addresses first network ip and last broadcast ip not usable )
   /16 (255.255.0.0): 2^{16}-2 = 65,534 usable hosts.( 65,536 Total ip addresses first network ip and last broadcast ip not usable )
   /28 (255.255.255.240): 2^{4}-2 = 14 usable hosts. ( 16 Total ip addresses first network ip and last broadcast ip not usable )
 
 3. Explain in your own words: why do we subnet?
+
    Make large network in to samll small networks to secure and easily manage
    
 4. Quick exercise — fill in:
@@ -119,7 +128,9 @@ private IPs are used for local, secure communication within a home or office net
 
 ### Task 4: Ports – The Doors to Services
 1. What is a port? Why do we need them?
-  Port number is 16-bit identifier used in networking protocols for a specific application program to use inside computer OS 
+
+Port number is 16-bit identifier used in networking protocols for a specific application program to use inside computer OS
+
 3. Document these common ports:
 
 | Port | Service |
