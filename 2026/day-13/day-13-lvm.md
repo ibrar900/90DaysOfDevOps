@@ -5,14 +5,11 @@
 
 LVM = Logical Volume Manager. It's like magic for storage: Combine disks (physical volumes), group them (volume groups), and slice into flexible parts (logical volumes) that you can grow/shrink.
 
-<img width="1396" height="727" alt="Screenshot 2026-02-06 205616" src="https://github.com/user-attachments/assets/f0f7d176-1f14-4c82-987c-b0e3acee7524" />
 <img width="1396" height="727" alt="Screenshot 2026-02-06 205616" src="https://github.com/user-attachments/assets/daf32cc7-ddfa-4af5-b204-90cc3e8b3aa8" />
 <img width="1402" height="739" alt="Screenshot 2026-02-06 202743" src="https://github.com/user-attachments/assets/08282a3b-aa79-4581-aab2-a2738ffb774a" />
 <img width="1408" height="697" alt="Screenshot 2026-02-06 203038" src="https://github.com/user-attachments/assets/6772c6a1-d436-4185-ba21-ebaf70c9ced3" />
 <img width="1606" height="868" alt="Screenshot 2026-02-06 194720" src="https://github.com/user-attachments/assets/521149ef-c78c-4f3d-85a6-96bd65748126" />
 <img width="1850" height="881" alt="Screenshot 2026-02-06 202716" src="https://github.com/user-attachments/assets/f9fbdd7c-eb7c-40a6-8924-28869bec6b42" />
-
-
 
 ## Before You Start (5 Minutes Setup)
 - Switch to root: `sudo -i` or `sudo su` (all commands need root).  
@@ -103,7 +100,7 @@ df -h      # Mounted filesystems
 - df -h: Shows / with space used
 
 **Screenshot Suggestion**: Run all and capture terminal.  
-*(Picture: lsblk command output – tree view of disks like sda, sdb.)*
+*(lsblk command output – tree view of disks like sda, sdb.)*
 
 ### Task 2: Create Physical Volume (PV)
 **Goal**: Prepare disk for LVM.
@@ -162,7 +159,7 @@ df -h /mnt/app-data                 # Verify space
 Output: df -h shows 500M available.
 
 **Screenshot Suggestion**: df -h after mount.  
-*(Picture: mount command example – showing df -h with new /mnt volume.)*
+*(mount command example – showing df -h with new /mnt volume.)*
 
 ### Task 6: Extend the Volume
 **Goal**: Grow LV bigger (LVM magic!).
@@ -175,9 +172,6 @@ df -h /mnt/app-data                         # Verify now 700M
 
 **What Happens**: Extends without downtime.  
 Output: "Size extended successfully."
-
-## Documentation Template (day-13-lvm.md)
-Copy and fill:
 
 markdown
 # Day 13 – LVM Challenge
@@ -204,13 +198,6 @@ resize2fs /dev/devops-vg/app-data
 3. Extend with lvextend + resize2fs – no downtime!
 ```
 
-## Submission
-1. Fork 90DaysOfDevOps repo.  
-2. Go to `2026/day-13/`.  
-3. Add `day-13-lvm.md` + screenshots (e.g., pvcreate-output.png).  
-4. Commit/push.
-
-## Learn in Public (LinkedIn Post Idea)
 "Day 13 LVM done! Created PV/VG/LV, extended 500M to 700M easily. Storage magic! #90DaysOfDevOps #DevOpsKaJosh #TrainWithShubham" + screenshot of df -h.
 
 ## Why This Matters for DevOps
