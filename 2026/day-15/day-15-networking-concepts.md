@@ -20,19 +20,20 @@ Authoritative name server. It provides actual answers to the DNS query. You can 
 
 Ip address classes are devided in to 5 classes
 
-Class            Range                        subnet mask                no of Networks      No of Hosts
-A        1.0.0.0 - 126.0.0.1                  255.0.0.0 / 8               126                16,777,214
-B        128.0.0.0 - 191.255.255.255          255.255.0.0 / 16            16,384             16,534
-C        192.0.0.0 - 223.255.255.255          255.255.255.0 / 24          2,097,152          254
-D        224.0.0.0 - 239.255.255.255          -------------               -----------        ---------- Reserved For Testing and Muticasting
-E        240.0.0.0 - 254.255.255.255          -------------               -----------        ---------- Experiments
+Class            Range                        subnet mask            no of Networks    No of Hosts
+A       1.0.0.0 - 126.0.0.1                255.0.0.0 / 8             126                16,777,214
+B       128.0.0.0 - 191.255.255.255        255.255.0.0 / 16          16,384             16,534
+C       192.0.0.0 - 223.255.255.255        255.255.255.0 / 24        2,097,152          254
+D       224.0.0.0 - 239.255.255.255        -------------             -----------        ---------- Reserved For Testing and Muticasting
+E       240.0.0.0 - 254.255.255.255        -------------             -----------        ---------- Experiments
 Every Class or subnet ip range's First ip (Network ip) and Last ip address (Braodcast ip) reserved can't be used.
+
 127.0.0.0 - 127.255.255.255 range ip are reserved for OS testing loop back address ex: ping: 127.0.0.0 (localaddress)  
   
-- Break down **CIDR notation** and **subnetting** basics
+**CIDR notation** and **subnetting** basics
 <img width="4800" height="7801" alt="CIDR_Chart-1" src="https://github.com/user-attachments/assets/5c96090f-aa4f-43c2-b349-d8c316880439" />
 
-- Know common **ports** and why they matter
+**Ports** and why they matter
 <img width="2360" height="2720" alt="common-port numbers" src="https://github.com/user-attachments/assets/735d0253-62a2-407b-aac6-c59bebeae78d" />
 
 FTP (File Transfer Protocol)        : Port 21
@@ -56,7 +57,6 @@ PostgreSQL                          : Port 5432 for PostgreSQL database communic
 
 <img width="468" height="622" alt="image" src="https://github.com/user-attachments/assets/59ca5ba3-2254-4685-9b24-d7808b12ab42" />
 
-
 ## Challenge Tasks
 
 ### Task 1: DNS – How Names Become IPs
@@ -66,13 +66,17 @@ the browser resolves the domain name to an IP address via DNS, establishes a sec
    
 2. What are these record types? Write one line each:
    - `A`, `AAAA`, `CNAME`, `MX`, `NS`
-   - 
-DNS records (A, AAAA, CNAME, MX, NS) are instructions in the Domain Name System that map domain names to IP addresses or other resources. A records map domains to IPv4 addresses, AAAA maps to IPv6, CNAME aliases names to other names, MX directs mail, and NS defines authoritative name servers. 
-Here is a breakdown of the specific record types:
+
+DNS records are instructions in the Domain Name System that map domain names to IP addresses or other resources. A records map domains to IPv4 addresses, AAAA maps to IPv6, CNAME aliases names to other names, MX directs mail, and NS defines authoritative name servers. 
+
 A Record (Address): Maps a domain or subdomain to a 32-bit IPv4 address, directly connecting a website name to its server.
+
 AAAA Record (IPv6 Address): Maps a domain or subdomain to a 128-bit IPv6 address, acting as the modern counterpart to the A record.
+
 CNAME Record (Canonical Name): Acts as an alias that maps a hostname (subdomain) to another hostname, rather than an IP address. It cannot be used for the root domain (e.g., example.com), only subdomains (e.g., www.example.com).
+
 MX Record (Mail Exchanger): Specifies the mail servers responsible for receiving email on behalf of a domain, directing traffic to the correct mail server.
+
 NS Record (Name Server): Identifies which DNS servers are authoritative for a domain, meaning they hold the actual, up-to-date DNS records and are responsible for answering queries about that domain.
 
 3. Run: `dig google.com` — identify the A record and TTL from the output
@@ -161,11 +165,11 @@ Answer in 2–3 lines each:
 <img width="1512" height="578" alt="Screenshot 2026-02-08 212030" src="https://github.com/user-attachments/assets/a66c8a13-57c1-4c9f-96cd-2d18e827b74f" />
 <img width="1529" height="675" alt="Screenshot 2026-02-08 212846" src="https://github.com/user-attachments/assets/d69f3c75-0a88-4e7a-9d73-4869c2fce1e9" />
 
-- The filled CIDR table
+
 - What you learned (3 key points)
-  IP Class Ranges and Subnet mask
-  service port numers for system applications
-  How internet works and what are all services behinnd the records
+1.IP Class Ranges and Subnet mask
+2.service port numers for system applications
+3.How internet works and what are all services behinnd the records
 
 ## Learn in Public
 
