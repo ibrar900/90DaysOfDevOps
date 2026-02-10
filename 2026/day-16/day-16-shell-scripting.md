@@ -93,12 +93,13 @@ Here is server_check.sh
 ---
 
 What I learned
-    1. Shebang: `#!/bin/bash` tells the system which interpreter to use
-    2. Variables: `NAME="Shubham"` (no spaces around `=`)
-    3. Read: `read -p "Enter name: " NAME`
-    4. If syntax: `if [ condition ]; then ... elif ... else ... fi`
-    5. File check: `if [ -f filename ]; then`   
-    6. How to write and run shell scripts with shebangs, variables, and user input using read.
-    7. The difference between single vs double quotes, and how quoting affects variable expansion.
-    8. Using conditional logic (if, elif, else) and test operators (-f, -gt, -lt) to handle files and numbers.
-    9. Error redirection (>/dev/null, 2>/dev/null, &>/dev/null).
+
+1. Shebang: `#!/bin/bash` tells the system which interpreter to use
+2. Variables: `NAME="Shubham"` (no spaces around `=`)
+3. Read: `read -p "Enter name: " NAME`
+4. If syntax: `if [ condition ]; then ... elif ... else ... fi`
+5. File check: `if [ -f filename ]; then`   
+6. How to write and run shell scripts with shebangs, variables, and user input using read.
+7. The difference between single vs double quotes, and how quoting affects variable expansion.
+8. Using conditional logic (if, elif, else) and test operators (-f, -gt, -lt) to handle files and numbers.
+9. Error redirection (>/dev/null, 2>/dev/null, &>/dev/null).
