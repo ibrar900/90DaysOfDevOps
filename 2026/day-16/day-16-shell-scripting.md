@@ -15,7 +15,8 @@ You will:
 2. Add the shebang line `#!/bin/bash` at the top
 3. Print `Hello, DevOps!` using `echo`
 4. Make it executable and run it
-![alt text](image-1.png)
+<img width="1426" height="227" alt="Screenshot 2026-02-10 141403" src="https://github.com/user-attachments/assets/9fa5c303-3873-4a55-bc4d-b80ad28ee1d8" />
+
 ```
 
 **Document:** What happens if you remove the shebang line?
@@ -36,7 +37,7 @@ If your current shell is zsh, dash, etc., it will run in that shell — which ma
    - A variable for your `NAME`
    - A variable for your `ROLE` (e.g., "DevOps Engineer")
    - Print: `Hello, I am <NAME> and I am a <ROLE>`
-![alt text](image-2.png)
+<img width="1451" height="532" alt="Screenshot 2026-02-10 143133" src="https://github.com/user-attachments/assets/b06e2aaa-dd19-4c54-a113-b00b22490f0e" />
 
 2. Try using single quotes vs double quotes — what's the difference?
 
@@ -59,7 +60,7 @@ echo "Hello $name"   # Output: Hello John
    - Asks the user for their name using `read`
    - Asks for their favourite tool
    - Prints: `Hello <name>, your favourite tool is <tool>`
-c:\Users\ibrar\Pictures\Screenshots\Screenshot 2026-02-10 145759.png
+<img width="1443" height="784" alt="Screenshot 2026-02-10 145759" src="https://github.com/user-attachments/assets/5aaa54fb-b0f5-4a6a-8384-00e772a67f4b" />
 
 ---
 
@@ -69,7 +70,7 @@ c:\Users\ibrar\Pictures\Screenshots\Screenshot 2026-02-10 145759.png
    - Prints whether it is **positive**, **negative**, or **zero**
 
 Here is check_number.sh
-![alt text](image-3.png)
+<img width="1441" height="695" alt="Screenshot 2026-02-10 151959" src="https://github.com/user-attachments/assets/1d4e5104-4521-4415-9b6b-81f2219bd7ef" />
 
 2. Create `file_check.sh` that:
    - Asks for a filename
@@ -77,7 +78,7 @@ Here is check_number.sh
    - Prints appropriate message
 
 Here is file_check.sh
-![alt text](image-4.png)    
+<img width="1434" height="478" alt="Screenshot 2026-02-10 152926" src="https://github.com/user-attachments/assets/f14d4bae-4429-4269-94dd-0fcfb10675da" />
 
 ---
 
@@ -89,7 +90,8 @@ Create `server_check.sh` that:
 4. If `n` — prints "Skipped."
 
 Here is server_check.sh
-![alt text](image-4.png)
+<img width="1433" height="681" alt="Screenshot 2026-02-10 154559" src="https://github.com/user-attachments/assets/fb6a2602-831f-4351-90f4-5a77921db6ac" />
+
 ---
 
 What I learned
