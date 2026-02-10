@@ -5,28 +5,24 @@ Use set -euo pipefail for safer scripts
 work with return values and local variables
 Build a slightly advanced script
 
-Challenge Tasks
+## Challenge Tasks
 
-Task 1: Basic functions---- functions.sh
-   
-90DaysOfDevOps\2026\day-18\scripts\functions.sh
+Task 1: Basic functions---- [functions.sh](scripts/functions.sh)
 
+[View Script](scripts/functions.sh)
 
-Task 2: Strict mode---- strict_demo.sh
-   
-90DaysOfDevOps\2026\day-18\scripts\strict_demo.sh
+Task 2: Strict mode---- [strict_demo.sh](scripts/strict_demo.sh)
 
+[View Script](scripts/strict_demo.sh)
 
-Task 3: Local variables---- local_demo.sh
-   
-90DaysOfDevOps\2026\day-18\scripts\local_demo.sh
+Task 3: Local variables---- [local_demo.sh](scripts/local_demo.sh)
 
+[View Script](scripts/local_demo.sh)
 
-Task 4: System info---- system_info.sh
-   
-90DaysOfDevOps\2026\day-18\scripts\system_info.sh
+Task 4: System info---- [system_info.sh](scripts/system_info.sh)
 
+[View Script](scripts/system_info.sh)
 
-Task 5: Disk check---- disk_check.sh
-   
-90DaysOfDevOps\2026\day-18\scripts\disk_check.sh
+Task 5: Disk check---- [disk_check.sh](scripts/disk_check.sh)
+
+[View Script](scripts/disk_check.sh)
