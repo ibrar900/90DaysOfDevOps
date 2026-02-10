@@ -17,8 +17,6 @@ You will:
 4. Make it executable and run it
 <img width="1426" height="227" alt="Screenshot 2026-02-10 141403" src="https://github.com/user-attachments/assets/9fa5c303-3873-4a55-bc4d-b80ad28ee1d8" />
 
-```
-
 **Document:** What happens if you remove the shebang line?
 
 #!/bin/bash is shebang if i remove it will use default shell #!/bin/sh
@@ -104,4 +102,3 @@ What I learned
     7. The difference between single vs double quotes, and how quoting affects variable expansion.
     8. Using conditional logic (if, elif, else) and test operators (-f, -gt, -lt) to handle files and numbers.
     9. Error redirection (>/dev/null, 2>/dev/null, &>/dev/null).
-
