@@ -1,17 +1,18 @@
 #!/bin/bash
 
-set -euo pipefail
+set -euo pipefail # pipefail
 
-echo "Check set -o pipefail"
-cat count.txt | grep "total"
-echo "After failing script running without set -o"
+echo "Check set -o pipefail" # pipefail
+cat count.txt | grep "total" # pipefail
+echo "After failing script running without set -o" # pipefail
 
-echo -e "\n"
-echo "Undefined variable -u"
-echo $a
-echo "After using undefined variable script running without set -u"
+echo -e "\n" # new line
+echo "Undefined variable -u" # undefined variable
+echo $a # undefined variable
+echo "After using undefined variable script running without set -u" # undefined variable
 
-echo -e "\n"
-echo "Failed command -e"
+echo -e "\n" # new line
+echo "Failed command -e" # failed command
 mkdir ../scripts
-echo "After failing command script running without using -e"
+echo "After failing command script running without using -e" # failed command
+
