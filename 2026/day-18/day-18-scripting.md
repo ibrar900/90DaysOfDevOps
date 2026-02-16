@@ -51,10 +51,132 @@ Task 4: System info---- [system_info.sh](scripts/system_info.sh)
     A function to print top 5 CPU-consuming processes
     A main function that calls all of the above with section headers
 
-Use set -euo pipefail at the top
+Use set -euo pipefail at the top.
+ 1.  Create Strict_demo.sh with set -euo pipefail at the top
+ 2.  Try using an undefined variable -- what happens with set -u ?
+ 3.  Try a command that fails -- what happens set -e ?
+ 4.  Try a piped command where one part fails -- what happens with set -o pipefail ?
+    
+Document: What does each flag do ?
+ . set -e ---> if a command fails it exits the script.
+ . set -u ---> it throws unbound variable error and exits the script
+ . set -o pipefail ---> Makes pipeline fail if any command fails
 
+ Great question — let’s break down your Bash script in a few different ways so you can really see what’s happening.  
+
+---
+
+## 🔍 **Line-by-Line Explanation**
+
+```bash
+#!/bin/bash
+set -euo pipefail
+```
+- `#!/bin/bash` → Shebang, tells the system to run this script with Bash.  
+- `set -euo pipefail` → Enables strict error handling:
+  - `-e`: Exit immediately if a command fails.  
+  - `-u`: Treat unset variables as errors.  
+  - `-o pipefail`: If any command in a pipeline fails, the whole pipeline fails.  
+
+---
+
+```bash
+echo "Check set -o pipefail"
+cat count.txt | grep "total"
+```
+- Prints a message.  
+- Runs a pipeline: `cat count.txt | grep "total"`.  
+  - If `grep` fails (e.g., no match), with `pipefail` enabled, the script exits.  
+  - Without `pipefail`, the script would continue even if `grep` failed.  
+
+---
+
+```bash
+echo "After failing script running without set -o"
+echo -e "\n"
+```
+- Shows what happens if `pipefail` isn’t set: the script continues after a failed pipeline.  
+- `echo -e "\n"` → Prints a newline.  
+
+---
+
+```bash
+echo "Undefined variable -u"
+echo $a
+```
+- Prints a message.  
+- Tries to print variable `$a`.  
+  - With `-u` enabled, this causes an error because `$a` is undefined.  
+  - Without `-u`, it would just print an empty line.  
+
+---
+
+```bash
+echo "After using undefined variable script running without set -u"
+echo -e "\n"
+```
+- Demonstrates that without `-u`, the script continues even after referencing an undefined variable.  
+
+---
+
+```bash
+echo "Failed command -e"
+mkdir ../scripts
+```
+- Prints a message.  
+- Tries to create a directory `../scripts`.  
+  - If it already exists or fails for another reason, with `-e` enabled, the script exits immediately.  
+  - Without `-e`, the script continues.  
+
+---
+
+```bash
+echo "After failing command script running without using -e"
+```
+- Shows that without `-e`, the script would keep running even after a failed command.  
+
+---
+
+## 🧩 **Conceptual Explanation**
+
+This script is essentially a **demo of Bash safety flags**:
+- **`-e`** → Stop on errors.  
+- **`-u`** → Stop on undefined variables.  
+- **`pipefail`** → Stop if any command in a pipeline fails.  
+
+It’s teaching you how scripts behave differently **with vs. without strict error handling**.
+
+---
+
+## 📚 **Analogy**
+
+Think of `set -euo pipefail` as **seatbelts for your script**:
+- `-e` → If something crashes, stop immediately (like airbags deploying).  
+- `-u` → Don’t drive with missing parts (undefined variables).  
+- `pipefail` → If one part of the chain breaks, the whole machine stops (pipeline safety).  
+
+Without these, the script keeps going even when things are broken — which can cause bigger problems later.
+
+---
+
+## ✅ **Best Practice Takeaway**
+
+Always start your Bash scripts with:
+
+```bash
+set -euo pipefail
+```
+
+This ensures:
+- You catch errors early.  
+- You don’t accidentally use undefined variables.  
+- Pipelines don’t silently fail.  
+
+---
+
+Would you like me to **rewrite this script into a safer, modern version** that demonstrates the same concepts but avoids pitfalls like `cat file | grep` (which is considered a *useless use of cat*)?
+ 
 <img width="1462" height="841" alt="Screenshot 2026-02-10 202616" src="https://github.com/user-attachments/assets/3ae4a9bf-0202-4906-ae48-3e97ea62a359" />
-
 
 Task 5: Disk check---- [disk_check.sh](scripts/disk_check.sh)
 
