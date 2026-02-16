@@ -5,7 +5,8 @@ Task 1: Install and Configure Git
 2. Set up your Git identity — name and email
 3. Verify your configuration
 
-image
+<img width="1215" height="707" alt="Screenshot 2026-02-14 163725" src="https://github.com/user-attachments/assets/89445b4b-7fb7-45f4-b12b-76c81643ed9a" />
+
 ''''
 Task 2: Create Your Git Project
 1. Create a new folder called `devops-git-practice`
@@ -13,7 +14,8 @@ Task 2: Create Your Git Project
 3. Check the status — read and understand what Git is telling you
 4. Explore the hidden `.git/` directory — look at what's inside
 
-image
+<img width="852" height="378" alt="Screenshot 2026-02-14 164028" src="https://github.com/user-attachments/assets/78cb743b-0260-4cfc-b9b8-716100ab53c4" />
+
 '''
 Task 3: Crrate git-commands.md file and write all git commands in it
 ....
@@ -24,7 +26,8 @@ Task 4: Stage and Commit
 3. Commit with a meaningful message
 4. Check the commit history
 
-image
+<img width="966" height="1010" alt="Screenshot 2026-02-14 165051" src="https://github.com/user-attachments/assets/bc2f4061-c83f-4c37-ad6a-612995d58926" />
+
 '''
 
 Task 5: Make More Changes and Build History
@@ -34,7 +37,8 @@ Task 5: Make More Changes and Build History
 4. Repeat this process atleast 3 times so you have multiple commits in your history
 5. View the full history in a compact format
 
-image
+<img width="1387" height="938" alt="Screenshot 2026-02-15 230231" src="https://github.com/user-attachments/assets/aa087019-e71b-4f4d-8d76-8994da0372aa" />
+
 '''
 Task 6: understand the Git workflow
 ....
