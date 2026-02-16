@@ -51,7 +51,18 @@ Task 4: System info---- [system_info.sh](scripts/system_info.sh)
     A function to print top 5 CPU-consuming processes
     A main function that calls all of the above with section headers
 
-Use set -euo pipefail at the top
+Use set -euo pipefail at the top.
+ 1.  Create Strict_demo.sh with set -euo pipefail at the top
+ 2.  Try using an undefined variable -- what happens with set -u ?
+ 3.  Try a command that fails -- what happens set -e ?
+ 4.  Try a piped command where one part fails -- what happens with set -o pipefail ?
+    
+Document: What does each flag do ?
+ . set -e ---> if a command fails it exits the script.
+ . set -u ---> it throws unbound variable error and exits the script
+ . set -o pipefail ---> Makes pipeline fail if any command fails
+ 
+
 
 <img width="1462" height="841" alt="Screenshot 2026-02-10 202616" src="https://github.com/user-attachments/assets/3ae4a9bf-0202-4906-ae48-3e97ea62a359" />
 
