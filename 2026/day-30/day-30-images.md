@@ -1,18 +1,40 @@
 # Day 30 – Docker Images & Container Lifecycle
 
+## Commands
+
+# sudo apt install docker.io # Install Docker
+# getent docker group # Check Docker group
+# sudo usermod -aG docker $USER # Add user to Docker group
+# newgrep docker # Check if user is in Docker group
+# docker --version # Check Docker version
+# docker ps # List running containers
+# docker ps -a # List all containers
+# docker pull <image> # Pull an image from Docker Hub
+# docker images # List images
+# docker run -it <image> # Run a container interactively
+# docker run -d <image> # Run a container in detached mode
+# docker exec -it containerid bash # Exec into a running container
+# docker start containerid # Start a stopped container
+# docker stop containerid # Stop a running container
+# docker pause/ unpause containerid # Pause/unpause a running container
+# docker restart containerid # Restart a running container
+# docker kill containerid # Kill a running container
+# docker rm containerid # Remove a container
+
+
 ## Task 1: Docker Images
-1. Pull the `nginx`, `ubuntu`, and `alpine` images from Docker Hub
+1. Pull the `nginx`, `ubuntu`, and `mysql` images from Docker Hub
      * `docker pull <image>`
    
 2. List all images on your machine — note the sizes
 
-    ![snapshot](images/images.png)
+    ![snapshot](images/images-list.png)
     
 3. Compare `ubuntu` vs `alpine` — why is one much smaller?
-     * `Ubuntu` - Larger image size because it includes many built‑in tools, libraries, and GNU utilities.
-               Heavier: slower startup and consumes more resources compared to Alpine.
-     * `Alpine` - Smaller image size since it contains fewer tools and libraries by default, so you install only what you need.
-               Lightweight: faster startup, minimal resource usage, ideal for microservices.
+     * `Ubuntu` - smaller image size, faster startup, and consumes fewer resources compared to heavier images.
+               lighter: ubuntu is a full operating system image.
+     * `mysql` -  Larger image size, slower startup, and consumes more resources compared to lighter images.
+               heavier: mysql is a database server image with more dependencies and features.
   
 4. Inspect an image — what information can you see?
 
@@ -36,7 +58,7 @@
 ---
 
 ## Task 2: Image Layers
-1. Run `docker image history nginx` — what do you see?
+1. Run `docker image history mysql` — what do you see?
 2. Each line is a **layer**. Note how some layers show sizes and some show 0B
 3. Write in your notes: What are layers and why does Docker use them?
 
@@ -72,52 +94,63 @@ Check `docker ps -a` after each step — observe the state changes.
 ## Task 4: Working with Running Containers
 1. Run an Nginx container in detached mode
 
-    ![snapshot](images/4-a.png)
+    ![snapshot](images/detached mode.png)
     
 2. View its **logs**
 
-    ![snapshot](images/4-b.png)
+    ![snapshot](images/logs.png)
     
 3. View **real-time logs** (follow mode)
 
-    ![snapshot](images/4-c.png)
+    ![snapshot](images/real-time follow-mode logs.png)
     
 4. **Exec** into the container and look around the filesystem
 
-    ![snapshot](images/4-d.png)
+    ![snapshot](images/exec in to container.png)
     
 5. Run a single command inside the container without entering it
 
-    ![snapshot](images/4-e.png)
+    ![snapshot](images/single command inside container.png)
     
 6. **Inspect** the container — find its IP address, port mappings, and mounts
 
-    ![snapshot](images/4-fip.png)
-    ![snapshot](images/4-fport.png)
-    ![snapshot](images/4-fmount.png)
+# docker inspect containerid # Inspect a running container
 
+    ![snapshot](images/inspect 1.png)
+    ![snapshot](images/inspect 2.png)
 ---
 
 ### Task 5: Cleanup
 1. Stop all running containers in one command
 
-    ![snapshot](images/stop-all.png)
+# docker stop $(docker ps -q) # Stop all running containers
+
+    ![snapshot](images/stop all running containers.png)
     
 2. Remove all stopped containers in one command
 
-    ![snapshot](images/rm-all.png)
+# docker rm $(docker ps -a -q) # Remove all stopped containers
+
+    ![snapshot](images/remove all stopped containers.png)
     
 * Using prune
-    
+
+# docker system prune -a # Remove all unused data (containers, images, volumes, networks)
+
     ![snapshot](images/prune.png)
     
 3. Remove unused images
+
+# docker rmi $(docker images) # Remove all images
 
     ![snapshot](images/rm-images.png)
     
 4. Check how much disk space Docker is using
 
+# docker system df # Check disk usage
+
     ![snapshot](images/df.png)
+    
     
 ---
 
