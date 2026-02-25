@@ -116,8 +116,9 @@ Check `docker ps -a` after each step — observe the state changes.
 
 # docker inspect containerid # Inspect a running container
 
-    ![snapshot](images/inspect 1.png)
-    ![snapshot](images/inspect 2.png)
+    ![snapshot](images/inspect%201.png)
+    ![snapshot](images/inspect%202.png)
+    
 ---
 
 ### Task 5: Cleanup
@@ -125,13 +126,13 @@ Check `docker ps -a` after each step — observe the state changes.
 
 # docker stop $(docker ps -q) # Stop all running containers
 
-    ![snapshot](images/stop all running containers.png)
+    ![snapshot](images/stop%20all%20running%20containers.png)
     
 2. Remove all stopped containers in one command
 
 # docker rm $(docker ps -a -q) # Remove all stopped containers
 
-    ![snapshot](images/remove all stopped containers.png)
+    ![snapshot](images/remove%20all%20stopped%20containers.png)
     
 * Using prune
 
@@ -150,7 +151,7 @@ Check `docker ps -a` after each step — observe the state changes.
 # docker system df # Check disk usage
 
     ![snapshot](images/df.png)
-    
+
     
 ---
 
