@@ -1,17 +1,25 @@
 # Update the System Packages
+''''
+
 sudo apt update && sudo apt upgrade -y # update the system packages
 
 # Install Git
+''''
+
 sudo apt install git -y # install git
 git --version # check git version
 
 # Configure Git
+''''
+
 git config --global user.name "Your Name" # set the user name
 git config --global user.email "[EMAIL_ADDRESS]" # set the user email
 git config --global user.name # show the user name
 git config --global user.email # show the user email
 
 # Initialize a New Git Repository
+''''
+
 git init # initialize a new git repository
 git clone URL # clone a repository from a remote location to local
 git add # add file to the staging area
