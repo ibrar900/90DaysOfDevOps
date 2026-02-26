@@ -204,27 +204,3 @@ useradd -m, passwd, groupadd, usermod -aG, chgrp, chmod 775, ls -ld
 
 **Pro Tip**: Always verify with `ls -ld /path` and `groups username` after changes.
 
-### Submission Checklist
-- Create `day-09-user-management.md` in your fork → `2026/day-09/`
-- Add 4–6 screenshots
-- Commit & push
-
-### Learn in Public (LinkedIn Post Idea)
-```text
-Just completed Day 09 User & Group Management Challenge! ✅
-
-Created users (tokyo, berlin, professor, nairobi), groups (developers, admins, project-team), and shared directories with 775 permissions.
-
-Key learning: Use -aG with usermod to add users to groups safely!
-
-#90DaysOfDevOps #DevOpsKaJosh #TrainWithShubham #Linux #UserManagement
-```
-
-You now have a complete, simple, visual, and practical guide!  
-Follow the steps exactly → you’ll finish successfully.
-
-If you get stuck on any step, reply with the error message — I’ll help instantly.  
-Ready to start Task 1? Go for it! 💪
-
-Happy Learning, Ibrar!  
-TrainWithShubham Style 🚀
