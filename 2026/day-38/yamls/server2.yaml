@@ -1,0 +1,20 @@
+server:
+  name: ubuntu-server
+  ip: 192.168.1.1
+  port: 22
+  startup_script: |
+    #!/bin/bash
+    sudo apt-get update
+    sudo apt-get install -y nginx
+    sudo systemctl enable nginx
+
+database:
+  host: db-server
+  name: development_db
+  startup_script: > #fold style
+    #!/bin/bash
+    echo "starting Database" && \
+    echo "Connecting to db-server"
+  credentials:
+    user: dbadmin
+    password: supersecret
