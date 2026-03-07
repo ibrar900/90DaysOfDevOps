@@ -1,0 +1,40 @@
+# Name of the Workflow
+name: Hello Workflows
+
+# Trigger the workflow on push to the main branch
+on:
+  push:
+    branches: [main]
+  
+#Define the job that run son this workflow
+jobs:
+  greet:
+    #specify the runner environment
+    runs-on: ubuntu-latest
+
+    # steps represent list of tasks to be executed in this job
+    steps:
+      #step 1: checkout the repository
+      - name: check repository
+        uses: actions/checkout@v4 # uses the checkout action to clone repository
+
+        #step 2: Print greeting message
+      - name: print greeting
+        run: echo "Hello from GitHub Actions!" # run command to print greeting message
+
+        # step 3: print the current date and time
+      - name: Print the date and time
+        run: echo "date"
+
+        # step 4:print the branch name
+      - name: print the branch name
+        run: echo "Triggered on branch:${{github.ref_name}}" # use github context
+
+        # step 5: list repo files
+      - name: list repository files
+        run: ls -la #list files in the repository
+
+        # step 6: print runner operating system
+      - name: Print runner os
+        run: echo "running on OS:${{runner.os}}" # use runner context
+        
