@@ -63,17 +63,15 @@ Error:
 Fix it:
 ![screenshot](fix.png)
 
-Failed pipline looks like:
-Red ❌ in the Actions tab
-Workflow status: Failed
-Failed job highlighted in red
-Read the error
-Open the failed workflow in Actions
-Click the failed job
-Expand the red step
-Scroll to the bottom
-Look a few lines above exit code 1 — that’s the real error
-edit code check for indentation, syntax, typos, etc. and fix it
+
+Failed pipiline looks like:
+ - Red X icon in Actions tab
+ - message shows Failed
+ - Failed job Heighlighted in red
+ - Eroor message in the logs
+ - click on failed job  read the errors and fix it.
+
+
 - 
 
 ---
