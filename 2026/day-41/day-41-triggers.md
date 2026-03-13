@@ -34,4 +34,16 @@
 
 ![yamlfiles](manual.yml)
 
+![images](images/staging.png)
+![images](images/production.png)
+
+### Task 4: Matrix Builds
+Create `.github/workflows/matrix.yml` that:
+1. Uses a matrix strategy to run the same job across:
+   - Python versions: `3.10`, `3.11`, `3.12`
+2. Each job installs Python and prints the version
+3. Watch all 3 run in parallel
+
+Then extend the matrix to also include 2 operating systems — how many total jobs run now?
+
 
