@@ -1,0 +1,17 @@
+name: checking what comes pre-installed in github hosted runners
+on:
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check following tools versions
+        run: |
+          echo "Docker version: "
+          docker --version
+          echo "Python version: "
+          python --version
+          echo "Node version: "
+          node --version
+          echo "Git version: "
+          git --version

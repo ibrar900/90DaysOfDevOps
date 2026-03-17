@@ -1,0 +1,23 @@
+name: running 3 different OS
+
+on:
+  workflow_dispatch:
+
+jobs:
+  info:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Print OS name
+        run: echo "OS name :" ${{ matrix.os }}
+      - name: Runners Hostname
+        run: |
+          echo "Hostname :"
+          hostname
+      - name: The current github user running the job
+        run: echo "Current user :" ${{ github.actor }}
+
+      - name: The current runner user running the job
+        run: echo "Current runner user:" $(whoami)

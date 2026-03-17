@@ -1,0 +1,12 @@
+name: self-hosted
+on:
+  workflow_dispatch:
+jobs:
+  info:
+    runs-on: [self-hosted, my-self-hosted-runner]
+    steps:
+      - name: Checking following information about self-hosted runner
+        run: |
+          echo "Hostname: $HOSTNAME"
+          echo "Working directory: $PWD"
+          echo "Hi from github" > hi.txt
