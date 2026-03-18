@@ -10,10 +10,10 @@
    - The runner's hostname
    - The current user running the job
 3. Watch all 3 run in parallel
-2026\day-42\yamlfiles\github-hosted.yml
 
-images of gitHUb Action
+![yamlfiles](yamlfiles/github-hosted.yml)
 
+![images](images/github hosted.png)
 
 Writein your notes: What is GitHub-Hosted runner? Who manages it?
  - A GitHub-Hosted runner is a temperory virtual machine (VM) or container that GitHub provides to execute your workflow jobs and get destroyed after run.
@@ -27,7 +27,9 @@ Writein your notes: What is GitHub-Hosted runner? Who manages it?
    - Node version
    - Git version
  
-2026\day-42\yamlfiles\pre-installed.yml
+![yamlfiles](yamlfiles/pre-installed.yml)
+
+![images](images/pre installed.png)
 
 
 2. Look up the GitHub docs for the full list of pre-installed software on `ubuntu-latest`
@@ -47,6 +49,8 @@ Write in your notes: Why does it matter that runners come with tools pre-install
 4. Start the runner — verify it shows as **Idle** in GitHub
 
 **Verify:** Your runner appears in the Runners list with a green dot.
+
+![yamlfiles](yamlfiles/self-hosted.yml)
 
 
 
