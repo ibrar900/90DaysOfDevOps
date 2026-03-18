@@ -10,7 +10,7 @@
    - The runner's hostname
    - The current user running the job
 3. Watch all 3 run in parallel
-D:\Batch 10\90DaysofDevopstask\2026\day-42\yamlfiles\github-hosted.yml
+2026\day-42\yamlfiles\github-hosted.yml
 
 images of gitHUb Action
 
@@ -27,7 +27,7 @@ Writein your notes: What is GitHub-Hosted runner? Who manages it?
    - Node version
    - Git version
  
-D:\Batch 10\90DaysofDevopstask\2026\day-42\yamlfiles\pre-installed.yml
+2026\day-42\yamlfiles\pre-installed.yml
 
 
 2. Look up the GitHub docs for the full list of pre-installed software on `ubuntu-latest`
@@ -61,7 +61,7 @@ Write in your notes: Why does it matter that runners come with tools pre-install
 
 **Verify:** Check your machine — is the file there? YES
 
-D:\Batch 10\90DaysofDevopstask\2026\day-42\yamlfiles\self-hosted.yml
+2026\day-42\yamlfiles\self-hosted.yml
 
 
 
