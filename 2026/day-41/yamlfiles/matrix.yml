@@ -2,11 +2,11 @@ name: matrix strategy
 on:
   push:
     branches: [main]
-    paths: matrix
+    paths:
+      - "matrix/**"
 
 jobs:
   matrix:
-
     strategy:
       fail-fast: true
       matrix:
@@ -21,7 +21,6 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
-      
+
       - name: print python version
         run: python --version
-        
