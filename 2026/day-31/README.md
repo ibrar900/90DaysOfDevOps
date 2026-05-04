@@ -17,7 +17,6 @@ This is the skill that separates someone who uses Docker from someone who actual
 
 ### Task 1: Your First Dockerfile
 1. Create a folder called `my-first-image`
-2. Inside it, create a `Dockerfile` that:
    - Uses `ubuntu` as the base image
    - Installs `curl`
    - Sets a default command to print `"Hello from my custom image!"`
@@ -93,3 +92,4 @@ Share your custom Docker image or Nginx screenshot on LinkedIn.
 
 Happy Learning!
 **TrainWithShubham**
+
